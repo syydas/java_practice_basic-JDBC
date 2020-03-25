@@ -5,13 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbUtil {
-    public static final String URL = "jdbc:mysql://localhost:3306/student_sys?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong";
+    public static final String URL = "jdbc:mysql://localhost:3306/student_sys?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false";
     public static final String USER = "root";
-    public static final String PASSWORD = "630303Zas";
+    public static final String PASSWORD = "950624";
     private static Connection conn = null;
     static {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
